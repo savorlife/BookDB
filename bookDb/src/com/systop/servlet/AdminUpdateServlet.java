@@ -5,16 +5,14 @@ import com.systop.dao.AdminDAO;
 import com.systop.dao.impl.AdminDAOimpl;
 
 import java.io.IOException;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 /**
  * 
@@ -59,8 +57,8 @@ public class AdminUpdateServlet extends HttpServlet{
 	    //调用后台方法
 	    AdminDAO admindao=new AdminDAOimpl();
 	    
-	  	int rows=admindao.updateAdmin(admin);
-	    if(rows>0){
+	  	Boolean rows=admindao.updateAdmin(admin);
+	    if(rows){
 	    	//成功
 	    	request.getRequestDispatcher("/success.jsp").forward(request,response);
 	    }else{

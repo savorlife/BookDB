@@ -1,9 +1,12 @@
 package com.systop.dao.impl;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import java.util.List;
 import com.systop.dao.UserDAO;
+
 import com.systop.entity.User;
+import com.systop.util.DBUtilsDao;
 
 
 
@@ -17,33 +20,35 @@ public class UserDAOimpl extends BaseDAO implements UserDAO {
 			 * //sql语句
 		String sql = "select * from user where u_name = ? and userpass = ? ";
 		try {
-			super.getConnection();// 调用父类方法获取数据库连接
-			pstm = con.prepareStatement(sql);// 创建预编译的SQL语句对象
-			pstm.setString(1, uName);
-			pstm.setString(2, uPass);
-			//执行sql语句,并返回结果集
-			rs = pstm.executeQuery();
-			//处理结果
-			if(rs.next()) {
-				user=new User();
-				user.setuId(rs.getInt("a_id"))
-				user.setAccount(rs.getString("account"));
-				user.setAdminpass(rs.getString("adminpass"));
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-			System.out.print("数据库连接错误");
-		}finally{				
-				super.closeAll();					
-		}			
+			 user = DBUtilsDao.findObjectByParams(sql, User.class, uName,uPass);
+		} catch (SQLException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		}
+						
 			 * 
 			 * */
 		
 		return user;	
 		}
 
-		//展示分类
-	
+		//展示
+		@Override
+		public List<User> findUserAll() {
+			List<User> list= new ArrayList<User>();
+			//sql语句
+			String sql = "select * from user";
+			
+			try {
+				list=DBUtilsDao.findAll(sql, User.class);
+			} catch (SQLException e1) {
+				// TODO 自动生成的 catch 块
+				e1.printStackTrace();
+			} 
+			
+			return list;	
+			
+		}
 
 		//添加
 		@Override
@@ -79,43 +84,7 @@ public class UserDAOimpl extends BaseDAO implements UserDAO {
 
 
 
-		//展示
-		@Override
-		public List<User> findUserAll() {
-			List<User> list= new ArrayList<User>();
-			//sql语句
-			String sql = "select * from user";
-			try {
-				super.getConnection();// 调用父类方法获取数据库连接
-				pstm = con.prepareStatement(sql);// 创建预编译的SQL语句对象
-				//执行sql语句,并返回结果集
-				rs = pstm.executeQuery();
-				//处理结果
-				while(rs.next()) {
-					User user=new User();
-					user.setuId(rs.getInt("u_id"));
-					user.setuName(rs.getString("u_name"));
-					user.setSex(rs.getString("u_sex"));
-					user.setuPass(rs.getString("userpass"));
-					user.setPhone(rs.getString("u_phone"));
-					user.setAddress(rs.getString("u_address"));
-					user.setEmail(rs.getString("u_mail"));
-					user.setBirthday(rs.getString("birthday"));
-					user.setType(rs.getInt("type"));
-					user.setHeart(rs.getDouble("u_heart"));
-					user.setStatus(rs.getInt("u_status"));
-					
-					list.add(user);
-				}
-			}catch (Exception e) {
-				e.printStackTrace();
-				System.out.print("数据库连接错误");
-			}finally{			
-					super.closeAll();					
-			}
-			return list;	
-			
-		}
+	
 
 		//修改用户信息
 		@Override

@@ -48,8 +48,8 @@ public class AdminDeleteServlet extends HttpServlet{
 		int aid=Integer.parseInt(id);
 	    //调用后台方法
 	    AdminDAO admindao=new AdminDAOimpl();
-	    int rows= admindao.deleteAdminId(aid);
-	    if(rows>0){
+	    Boolean rows= admindao.deleteAdminId(aid);
+	    if(rows){
 	    	//成功
 	 //   	request.getRequestDispatcher("/adminList").forward(request,response);
 	    	response.sendRedirect(path+"/adminList");

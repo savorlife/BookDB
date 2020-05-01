@@ -25,18 +25,21 @@
 <body>
 	<div class="layui-fluid">
 		<div class="layui-row">
-			<form class="layui-form" method="post" action="${path}/adminCheck">
+			<form class="layui-form" method="post" action="${path}/adminAdd">
 				<div class="layui-form-item">
 					<label for="L_account" class="layui-form-label"> <span
 						class="x-red">*</span>账号
 					</label>
 					<div class="layui-input-inline">
-						<input type="text" id="L_account" name="account" required=""
+						<input type="text" id="L_account" name="account" required=""  onblur="fun()"
 							lay-verify="account" autocomplete="off" class="layui-input">
 					</div>
-					<div class="layui-form-mid layui-word-aux">
-						<span class="x-red">${chong}</span>
-					</div>
+						
+						<span id="keyi" class="layui-form-mid"  style="color:green; "></span>
+					
+					 
+						<span id="chong" class="layui-form-mid" style="color:red;"></span>
+					
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label"><span class="x-red">*</span>角色</label>
@@ -120,7 +123,52 @@
 				
 				*/
         });
-		
+	//实现Ajax重要的内容
+	function fun() {
+		var L_account = document.getElementById("L_account").value;
+			//1、创建xhr对象
+			try {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e) {
+				try {
+					xhr = new XMLHttpRequest();
+				} catch (ee) {
+					try {
+						xhr = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch (eee) {
+						alert('该换浏览器了！浏览器不支持Ajax！');
+					}
+				}
+			}
+
+			if (xhr) {
+				//2、创建Ajax请求，Ajax也有两种请求形式get post
+				xhr.open("post", "/bookDB/adminCheck?L_account="+L_account);
+
+				//3、发送Ajax请求
+				xhr.send(null);
+				
+			xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4) {   //为啥等4可以看下面readyState值的含义
+						//4、处理服务器响应
+						var data = xhr.responseText;
+
+						//消息展示容器
+						var span = document.getElementById("chong");
+						var k = document.getElementById("keyi");
+						if (data == "1") {
+							k.innerHTML = '恭喜，O(∩_∩)O哈哈~可以使用';
+							span.innerHTML = '';
+						} else {
+						//	span.style.border = "solid 1px red";
+						k.innerHTML = '';
+							span.innerHTML = '-_-!!!,不可以使用';
+						}
+					}
+				};
+			}
+
+		}
         
         </script>
 	<script>var _hmt = _hmt || []; (function() {
