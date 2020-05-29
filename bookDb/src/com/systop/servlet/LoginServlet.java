@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet{
 			      	SimpleDateFormat xizai = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			      	session.setAttribute("time",time);
 			      	session.setAttribute("xizai",xizai);
-				request.getRequestDispatcher("/index.jsp").forward(request, response); 
+				request.getRequestDispatcher("/admin/index.jsp").forward(request, response); 
 			}else{
 				//Ê§°Ü
 				

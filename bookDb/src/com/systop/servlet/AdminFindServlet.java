@@ -51,10 +51,10 @@ public class AdminFindServlet extends HttpServlet{
 	    if(admin!=null){
 	    	//³É¹¦
 	    	request.setAttribute("admin", admin);
-	    	request.getRequestDispatcher("/adminUpdate.jsp").forward(request,response);
+	    	request.getRequestDispatcher("/admin/adminUpdate.jsp").forward(request,response);
 	    }else{
 	    	//Ê§°Ü
-	    	request.getRequestDispatcher("/error.jsp").forward(request,response);
+	    	request.getRequestDispatcher("/admin/error.jsp").forward(request,response);
 	    }
 	      
 	}

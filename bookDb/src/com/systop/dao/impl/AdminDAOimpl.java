@@ -64,12 +64,12 @@ public class AdminDAOimpl  implements AdminDAO {
 
 		//Ìí¼Ó
 		@Override
-		public Boolean saveAdmin(Admin admin) {
+		public int saveAdmin(Admin admin) {
 		
 			//sqlÓï¾ä
 			String sql = "insert into admin(account,adminpass,type) values (?,?,?)";
 			
-			Boolean row = null;
+			int row = 0;
 			try {
 				row = DBUtilsDao.update(sql, admin.getAccount(), admin.getAdminpass(),admin.getType());
 			} catch (SQLException e) {
@@ -82,11 +82,11 @@ public class AdminDAOimpl  implements AdminDAO {
 
 		//¸üÐÂ
 		@Override
-		public Boolean updateAdmin(Admin admin) {
+		public int updateAdmin(Admin admin) {
 		
 			String sql = "update admin set account = ?,adminpass = ?,type = ? where a_id = ?";
 			
-			Boolean row = null;
+			int row = 0;
 			try {
 				row = DBUtilsDao.update(sql, admin.getAccount(), admin.getAdminpass(),admin.getType(),admin.getA_id());
 			} catch (SQLException e) {
@@ -132,11 +132,11 @@ public class AdminDAOimpl  implements AdminDAO {
 
 		//É¾³ý
 		@Override
-		public Boolean deleteAdminId(int id) {
+		public int deleteAdminId(int id) {
 
 			String sql = "delete from admin where a_id = ? ";
 			
-			Boolean row = null;
+			int row = 0;
 			try {
 				row = DBUtilsDao.update(sql,id);
 			} catch (SQLException e) {

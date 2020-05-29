@@ -1,0 +1,73 @@
+#shumian{
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+#shumian img{
+display: inline-block;
+}
+#shumian img,#content,#jianjie{
+    vertical-align: top;
+}
+#content{
+    display: inline-block;
+    margin: 0 30px;
+    width: 23%;
+    height: 100%;
+}
+p{
+    display: block;
+    margin: 10px 0;
+}
+#content span{
+    font-family: Arial, Helvetica, sans-serif;
+    color: tomato;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+#content span:nth-of-type(2){
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e9b588;
+    font-size: 18px;
+    font-weight: bold;
+}
+#content a{
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    margin-top: 60px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color:red;
+}
+#content a:hover{
+    font-size: 18px;
+    background-color:rgb(255, 142, 142);
+}
+#jianjie{
+    display: inline-block;
+    width: 30%;
+    height: 70%;
+    padding-left: 100px;
+    border-left: 1px solid #e4ba95;
+}
+
+#success{
+    display: block;
+    width: 0;
+    height: 0;
+    background-color: #e4ba95;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px;
+    top: 0px;
+    left: 0px;
+}

@@ -10,15 +10,15 @@ public interface AdminDAO {
 	//展示
 	public List<Admin> findAdminAll(int pageNow);
 	//添加管理员
-	public Boolean saveAdmin(Admin admin);
+	public int saveAdmin(Admin admin);
 	//修改管理员
-	public Boolean updateAdmin(Admin admin);
+	public int updateAdmin(Admin admin);
 	//搜索管理员
 	public Admin findAdminId(int id);
 	//查重
 	public Admin adminCheck(String account);
 	//删除管理员
-	public Boolean deleteAdminId(int id);
+	public int deleteAdminId(int id);
 
 	//获取页数
 	public int pages();

@@ -64,13 +64,11 @@ public  class DBUtilsDao {
 	 * @return true成功，false失败
 	 * @throws SQLException
 	 */
-	public static Boolean update(String sql,Object ... params) throws SQLException {
+	public static int update(String sql,Object ... params) throws SQLException {
 		//创建QueryRunner对象
 		QueryRunner runner = new QueryRunner(C3P0Utils.getDataSource());
 		int rows = runner.update(sql, params);
-		if(rows > 0) {
-			return true;
-		}
-		return false;
+
+		return rows;
 	}
 }

@@ -1,20 +1,18 @@
 package com.systop.servlet;
 
-import com.systop.entity.Admin;
+
 import com.systop.dao.AdminDAO;
 import com.systop.dao.impl.AdminDAOimpl;
 
 import java.io.IOException;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 /**
  * 
@@ -48,14 +46,14 @@ public class AdminDeleteServlet extends HttpServlet{
 		int aid=Integer.parseInt(id);
 	    //调用后台方法
 	    AdminDAO admindao=new AdminDAOimpl();
-	    Boolean rows= admindao.deleteAdminId(aid);
-	    if(rows){
+	    int rows= admindao.deleteAdminId(aid);
+	    if(rows>0){
 	    	//成功
 	 //   	request.getRequestDispatcher("/adminList").forward(request,response);
 	    	response.sendRedirect(path+"/adminList");
 	    }else{
 	    	//失败
-	    	request.getRequestDispatcher("/error.jsp").forward(request,response);
+	    	request.getRequestDispatcher("/admin/error.jsp").forward(request,response);
 	    	
 	    }
 	   	

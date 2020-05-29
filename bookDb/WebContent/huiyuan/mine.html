@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/mine.css">
+    <script src="../js/index.js"></script>
+    <style>
+       #adminBtn{
+        font-size: 14px;
+      }
+      .search{
+        margin-left: 145px;
+      }
+    </style>
+</head>
+<body>
+
+      <!-- 头 -->
+<header name="top">
+  <div id="head">
+    <img src="../img/logo1.png" alt="">
+    
+    <div class="search" >
+      <input type="text" class="searchtext" default="向上生长">
+      <span type="button" value="提交" class="searchbtn">搜索</span>
+      <a href="../gaojisearch.html">高级搜素</a>
+    </div>
+    
+    <a id="adminBtn" href="javascript:void(0)">李澳</a>
+  </div>
+   
+    
+    </header>
+    
+    <nav>
+    <ul>
+      <li style="background-color: #fff;"><a href="../index.html" >分类</a> </li>
+      <li><a href="jilu.html" >借阅记录</a> </li>
+    
+      <li><a id="mine" href="" style="background-color: #c6a58a;">
+        <img src="../img/mine.png" alt="">
+        我的</a> </li>
+    </ul>
+    </nav>
+    <div id="box" >
+        <ul id="fl" style="display:none;margin-top: 20px;">
+            <li>
+              <a href="dourou.html">
+                
+                  马列主义毛邓思想
+              </a>
+             
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              哲学
+          </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              计算机
+          </a>
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+                 
+                  社会科学总论
+              </a>
+          
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+                
+              政治、法律
+          </a>
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+               
+                  军事
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              经济
+          </a>
+          </li>
+          
+          <li>   
+              <a href="dourou.html">
+                 
+                 文化、科学、教育、体育
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+                
+              语言、文字
+          </a>
+          </li>
+          <li>
+              <a href="dourou.html">
+               
+                  文学
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              艺术
+          </a>
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+                 
+                  历史、地理
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+                
+              自然科学总论
+          </a>
+          
+          </li>
+          
+          
+          <li>
+              
+              <a href="dourou.html">
+               
+                  数理科学和化学
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              <span>天文学、地球科学</span>
+          </a>
+          
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+                 
+                  <span>生物科学</span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              <span>医药、卫生</span>
+          </a>
+          
+          </li>
+          
+          <li>
+              
+              <a href="dourou.html">
+                 
+                  <span>农业科学</span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              <span>工业技术</span>
+          </a>
+          </li>
+          
+          <li>
+             
+              <a href="dourou.html">
+                 
+                  <span>交通运输</span>
+              </a>
+          </li>
+           </ul>
+          
+    <div id="xinxi">
+      <p>
+      <span>id：</span><input type="text" readonly value="123234324">
+      </p>
+      <p>
+        <span>手机号</span><input type="text" readonly value="1342534554">
+      </p>
+      <p>
+       <span>用户名：</span> <input type="text" name="" id="" readonly value="啦啦">
+      </p>
+      <p>
+        <span>密码：</span> <input type="password" name="" id="" readonly value="123234324">
+       </p>
+       <p>
+         <button id="gaiB">修改</button>
+       </p>
+      
+    </div >
+      
+    <div id="gai">
+      <p>
+          <span>用户名：</span> <input type="text" name="" id="" >
+        </p>
+        <p>
+          <span>旧密码：</span> <input type="password" name="" id="" >
+        </p>
+        <p>
+          <span>新密码：</span> <input type="password" name="" id="" >
+        </p>
+        <p>
+          <button id="sumbit">提交</button>
+          <button id="quxiao">取消</button>
+        </p>
+    </div>
+
+
+    </div>
+
+    <div id="success">修改成功!</div>
+
+</body>
+<script src="../js/flhover.js"></script>
+<script>
+
+
+
+
+
+
+
+$('#quxiao').click(function(){
+  $("#gai").css('display','none');
+  $("#xinxi").css('display','block');
+})
+
+    $('#gaiB').click(function(){
+      $("#gai").css('display','block');
+      $("#xinxi").css('display','none');
+    $("#gai").animate({
+      top: '130px',
+      left:'570px',
+      opacity:'1',
+      height:'350px',
+      width:'400px'
+    });
+
+    })
+
+    $('#sumbit').click(function(){
+      $("#success").css('display','block');
+    $("#success").animate({
+      top: '300px',
+      left:'650px',
+      opacity:'1',
+      height:'100px',
+      width:'200px'
+    });
+
+	setTimeout(function(){
+    $("#success").hide();
+    location.reload();
+    },1500);
+
+    })
+</script>
+</html>

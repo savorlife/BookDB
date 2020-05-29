@@ -68,7 +68,7 @@ public class AdminListServlet extends HttpServlet{
 	   	}
 	   	session.setAttribute("pages", pages);
 	   
-	   	request.getRequestDispatcher("/adminlist.jsp").forward(request, response);
+	   	request.getRequestDispatcher("/admin/adminlist.jsp").forward(request, response);
 	   	
 	}
 	

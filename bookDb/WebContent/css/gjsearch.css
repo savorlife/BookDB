@@ -1,0 +1,33 @@
+#gaoji{
+    width: 30%;
+    height: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+}
+p span{
+    display: inline-block;
+    width: 120px;
+    font-size: 18px;
+    /* text-align: center; */
+}
+p{
+    display: flex;
+    width: 400px;
+    height: 30px;
+    margin-bottom: 20px;
+    
+}
+input{
+    border: 1px solid #c6a58a;
+    width: 230px;
+    height: 30px;
+    font-size: 16px;
+}
+button{
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #c6a58a;
+    color: rgb(255, 255, 255);
+}

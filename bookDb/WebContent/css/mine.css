@@ -1,0 +1,85 @@
+#xinxi{
+    width: 30%;
+    height: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+}
+header{
+    width: 100%;
+    background-color: #ffffff;
+}
+nav{
+    background-color: #ffffff;
+}
+body{
+    background-color: #ffebdb;
+}
+header #head{
+    display: flex;
+  width: 80%;
+  height: 90px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+
+}
+p span{
+    display: inline-block;
+    width: 80px;
+    font-size: 18px;
+    /* text-align: center; */
+}
+p{
+    display: flex;
+    width: 400px;
+    height: 30px;
+    margin-bottom: 20px;
+    
+}
+input{
+    border: 1px solid #c6a58a;
+    width: 230px;
+    height: 30px;
+    font-size: 16px;
+}
+button{
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #c6a58a;
+    color: rgb(255, 255, 255);
+}
+#gai{
+    display: none;
+    width: 0;
+    height: 0;
+    margin: 50px auto;
+    position: fixed;
+    top: 100px;
+    left: 500px;
+    background-color: #ffebdb;
+ 
+}
+#gai button{
+    margin-top: 50px;
+   
+}
+#gai button:nth-of-type(1){
+    margin-right: 100px;
+}
+
+#success{
+    display: none;
+    width: 0;
+    height: 0;
+    background-color: #e4ba95;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px;
+    top: 0px;
+    left: 0px;
+}

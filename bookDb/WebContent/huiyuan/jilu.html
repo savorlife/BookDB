@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/jilu.css">
+    <script src="../js/index.js"></script>
+    <style>
+      #adminBtn{
+        font-size: 14px;
+      }
+      .search{
+        margin-left: 145px;
+      }
+    </style>
+</head>
+<body>
+
+      <!-- 头 -->
+<header name="top">
+
+    <img src="../img/logo1.png" alt="">
+    
+    <div class="search" >
+      <input type="text" class="searchtext" default="向上生长">
+      <span type="button" value="提交" class="searchbtn">搜索</span>
+      <a href="../gaojisearch.html">高级搜素</a>
+    </div>
+    
+    <a id="adminBtn" href="javascript:void(0)">李澳</a>
+
+   
+    
+    </header>
+    
+    <nav>
+    <ul>
+      <li style="background-color: #fff;" ><a href="../index.html" >分类</a> </li>
+      <li style="background-color: #c6a58a;"><a href="#" >借阅记录</a> </li>
+    
+      <li><a id="mine" href="mine.html" >
+        <img src="../img/mine.png" alt="">
+        我的</a> </li>
+    </ul>
+    </nav>
+    <div id="box" >
+        <ul id="fl" style="display:none;margin-top: 20px;">
+            <li>
+              <a href="dourou.html">
+                
+                  马列主义毛邓思想
+              </a>
+             
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              哲学
+          </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              计算机
+          </a>
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+                 
+                  社会科学总论
+              </a>
+          
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+                
+              政治、法律
+          </a>
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+               
+                  军事
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              经济
+          </a>
+          </li>
+          
+          <li>   
+              <a href="dourou.html">
+                 
+                 文化、科学、教育、体育
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+                
+              语言、文字
+          </a>
+          </li>
+          <li>
+              <a href="dourou.html">
+               
+                  文学
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              艺术
+          </a>
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+                 
+                  历史、地理
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+                
+              自然科学总论
+          </a>
+          
+          </li>
+          
+          
+          <li>
+              
+              <a href="dourou.html">
+               
+                  数理科学和化学
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              <span>天文学、地球科学</span>
+          </a>
+          
+          </li>
+          
+          <li>
+              <a href="dourou.html">
+                 
+                  <span>生物科学</span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              <span>医药、卫生</span>
+          </a>
+          
+          </li>
+          
+          <li>
+              
+              <a href="dourou.html">
+                 
+                  <span>农业科学</span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="dourou.html">
+               
+              <span>工业技术</span>
+          </a>
+          </li>
+          
+          <li>
+             
+              <a href="dourou.html">
+                 
+                  <span>交通运输</span>
+              </a>
+          </li>
+           </ul>
+          
+
+           <div id="jilu">
+
+            <div class="title" >已借未取<span>></span> </div>
+            <ul id="weiqu">
+              <li>
+                <img src="../img/junzhulu.jpg" alt="">
+                <div>
+                  <p>图书名称：君主论</p>
+                  <p>借书时间：<span >2020/5/20</span> </p>
+                  <p>应还时间：<span class="htime">2020/6/19</span></p>
+                </div>
+
+              </li>
+
+            </ul>
+
+
+            <div class="title">未还 <span>></span></div>
+            <ul id="weihuan">
+              <li>
+                <img src="../img/junzhulu.jpg" alt="">
+                <div>
+                  <p>图书名称：君主论</p>
+                  <p>借书时间：<span >2020/5/20</span> </p>
+                  <p>应还时间：<span class="htime">2020/6/19</span></p>
+                </div>
+ 
+              </li>
+            </ul>
+
+
+
+            <div class="title">已还<span>></span></div>
+            <ul id="yihuan">
+              <li>
+                <img src="../img/junzhulu.jpg" alt="">
+                <div>
+                  <p>图书名称：君主论</p>
+                  <p>借书时间：<span >2020/5/20</span> </p>
+                  <p>还书时间：<span >2020/6/1</span></p>
+                </div>
+      
+              </li>
+            </ul>
+           </div>
+
+
+    </div>
+
+    <div id="success">修改成功!</div>
+
+</body>
+<script src="../js/flhover.js"></script>
+<script>
+
+
+
+
+var i=0;
+
+$('.title:nth-of-type(1)').click(function(){
+  i++;
+
+  $("#weiqu").slideToggle("slow");
+if(i%2 == 0){
+  $('.title:nth-of-type(1) span').css({
+    'transform':'rotate(270deg)',
+    '-ms-transform':'rotate(270deg)',
+    '-webkit-transform':'rotate(270deg)'
+    });
+}else{
+  $('.title:nth-of-type(1) span').css({
+    'transform':'rotate(270deg)',
+    '-ms-transform':'rotate(90deg)',
+    '-webkit-transform':'rotate(90deg)'
+    });
+}})
+
+$('.title:nth-of-type(2)').click(function(){
+  i++;
+
+  $("#weihuan").slideToggle("slow");
+if(i%2 == 0){
+  $('.title:nth-of-type(2) span').css({
+    'transform':'rotate(90deg)',
+    '-ms-transform':'rotate(90deg)',
+    '-webkit-transform':'rotate(90deg)'
+    });
+}else{
+  $('.title:nth-of-type(2) span').css({
+    'transform':'rotate(270deg)',
+    '-ms-transform':'rotate(270deg)',
+    '-webkit-transform':'rotate(270deg)'
+    });
+}})
+
+$('.title:nth-of-type(3)').click(function(){
+  i++;
+
+  $("#yihuan").slideToggle("slow");
+if(i%2 == 0){
+  $('.title:nth-of-type(3) span').css({
+
+    'transform':'rotate(270deg)',
+    '-ms-transform':'rotate(270deg)',
+    '-webkit-transform':'rotate(270deg)'
+
+    });
+}else{
+  $('.title:nth-of-type(3) span').css({
+    
+    'transform':'rotate(90deg)',
+    '-ms-transform':'rotate(90deg)',
+    '-webkit-transform':'rotate(90deg)'
+   
+    });
+}})
+
+
+
+
+
+$('#quxiao').click(function(){
+  $("#gai").css('display','none');
+})
+
+    $('#gaiB').click(function(){
+      $("#gai").css('display','block');
+    $("#gai").animate({
+      top: '130px',
+      left:'580px',
+      opacity:'1',
+      height:'350px',
+      width:'400px'
+    });
+
+    })
+
+    $('#sumbit').click(function(){
+    $("#success").animate({
+      top: '300px',
+      left:'650px',
+      opacity:'1',
+      height:'100px',
+      width:'200px'
+    });
+
+	setTimeout(function(){
+    $("#success").hide();
+    location.reload();
+    },1500);
+
+    })
+</script>
+</html>

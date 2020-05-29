@@ -46,13 +46,13 @@ public class AdminAddServlet extends HttpServlet {
 	    admin.setType(type);
 	    //调用后台方法
 	    AdminDAO admindao=new AdminDAOimpl();
-	    Boolean rows= admindao.saveAdmin(admin);
-	    if(rows){
+	    int rows= admindao.saveAdmin(admin);
+	    if(rows>0){
 	    	//成功
-	    	request.getRequestDispatcher("/success.jsp").forward(request,response);
+	    	request.getRequestDispatcher("/admin/success.jsp").forward(request,response);
 	    }else{
 	    	//失败
-	    	request.getRequestDispatcher("/error.jsp").forward(request,response);
+	    	request.getRequestDispatcher("/admin/error.jsp").forward(request,response);
 	    }
 	}
 
