@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%String path=request.getContextPath(); %>
+<%String path=request.getContextPath();
+request.setAttribute("path", path);
+%>
 <!doctype html>
 <html class="x-admin-sm">
 <head>
 <meta charset="UTF-8">
-<title>哈根达斯后台管理系统</title>
+<title>图书借阅平台</title>
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -15,7 +17,7 @@
 <link rel="stylesheet" href="${path}/css/login.css">
 <link rel="stylesheet" href="${path}/css/xadmin.css">
 <script type="text/javascript" src="${path}/js/jquery.min.js"></script>
-<script src="./lib/layui/layui.js" charset="utf-8"></script>
+<script src="${path}/lib/layui/layui.js" charset="utf-8"></script>
 <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>

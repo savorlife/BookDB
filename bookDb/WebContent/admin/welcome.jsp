@@ -4,6 +4,7 @@
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 
+
 <!DOCTYPE html>
 <html class="x-admin-sm">
 <head>
@@ -35,7 +36,7 @@
 								<c:when test="${admin.type==1}">超级管理员</c:when>
 								<c:otherwise>管理员</c:otherwise>
 						</c:choose>
-							： <span class="x-red">${admin.account}</span><span>当前时间为：${xizai.format(time)}</span>
+							： <span style="color: red;">${admin.account}</span><span>当前时间为：${xizai.format(time)}</span>
 						</blockquote>
 					</div>
 				</div>

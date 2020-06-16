@@ -12,13 +12,23 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
 </head>
-<body>
-<iframe src="https://api.isoyu.com/gy/" frameborder="0" scrolling="no" width="100%" id="isoyu_gy"></iframe>
-
-<script type="text/javascript">
-function mu_changeHeight(){
-var ifm= document.getElementById("isoyu_gy");
-ifm.height=document.documentElement.clientHeight;
-}</script>
-</body>
+    <body>
+          <div class="layui-container">
+           <div class="fly-panel"> 
+            <div class="fly-none"> 
+             <h2><i class="layui-icon layui-icon-404"></i></h2> 
+             <p>页面或者数据被<a href=""> 纸飞机 </a>运到火星了，啥都看不到了…</p> 
+            </div>
+           </div>
+          </div>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    </body>
 </html>

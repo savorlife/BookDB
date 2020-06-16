@@ -1,3 +1,4 @@
+
 #jilu{
     width: 60%;
     height: 70%;
@@ -10,9 +11,15 @@
     height: 132px;
     font-size: 18px;
     background-color: #fae5d4;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-content:center;
     border: 1px solid #dba77c;
 
+}
+#jilu ul li div{
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: space-evenly;
 }
 .timespan{
     height: 100%;
@@ -40,9 +47,7 @@
 	-ms-transform:rotate(270deg); /* IE 9 */
 	-webkit-transform:rotate(270deg); /* Safari and Chrome */
 }
-#jilu ul li div p{
-    margin: 10px auto;
-}
+
 .htime{
     color: rgb(230, 33, 33);
 }

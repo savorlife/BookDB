@@ -15,11 +15,13 @@ public interface AdminDAO {
 	public int updateAdmin(Admin admin);
 	//搜索管理员
 	public Admin findAdminId(int id);
-	//查重
-	public Admin adminCheck(String account);
+	//查账号
+	public List<Admin> adminFindByAccount(String account);
 	//删除管理员
 	public int deleteAdminId(int id);
 
 	//获取页数
 	public int pages();
+
+	public Admin adminCheck(String account);
 }

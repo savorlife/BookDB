@@ -10,7 +10,7 @@
 <html class="x-admin-sm">
 <head>
 <meta charset="UTF-8">
-<title>哈根达斯欢迎页面</title>
+<title>图书管理系统</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -26,8 +26,12 @@
 </head>
 <body>
 	<div class="x-nav">
-		<span class="layui-breadcrumb"> <a href="">首页</a> <a href="">演示</a>
-			<a> <cite>导航元素</cite></a>
+		<span class="layui-breadcrumb">  
+						<c:choose>
+								<c:when test="${admin.type==1}"><span>超级管理员</span></c:when>
+								<c:otherwise><span>管理员</span></c:otherwise>
+						</c:choose>
+							： <span class="x-red">${admin.account}</span><span>&nbsp;欢迎使用图书借阅平台</span>
 		</span> <a class="layui-btn layui-btn-small"
 			style="line-height: 1.6em; margin-top: 3px; float: right"
 			onclick="location.reload()" title="刷新"> <i
@@ -38,19 +42,15 @@
 			<div class="layui-col-md12">
 				<div class="layui-card">
 					<div class="layui-card-body ">
-						<form class="layui-form layui-col-space5">
+						<form class="layui-form layui-col-space5" action="${path}/adminFindBy">
+							
 							<div class="layui-inline layui-show-xs-block">
-								<input class="layui-input" autocomplete="off" placeholder="开始日"
-									name="start" id="start">
-							</div>
-							<div class="layui-inline layui-show-xs-block">
-								<input class="layui-input" autocomplete="off" placeholder="截止日"
-									name="end" id="end">
-							</div>
-							<div class="layui-inline layui-show-xs-block">
-								<input type="text" name="username" placeholder="请输入管理员ID"
+								<input type="text" name="content" placeholder="请输入管理员账号"
 									autocomplete="off" class="layui-input">
 							</div>
+							
+		
+                                
 							<div class="layui-inline layui-show-xs-block">
 								<button class="layui-btn" lay-submit="" lay-filter="sreach">
 									<i class="layui-icon">&#xe615;</i>
@@ -59,9 +59,7 @@
 						</form>
 					</div>
 					<div class="layui-card-header">
-						<button class="layui-btn layui-btn-danger" onclick="delAll()">
-							<i class="layui-icon"></i>批量删除
-						</button>
+				
 						<button class="layui-btn"
 							onclick="xadmin.open('添加管理员','admin/adminAdd.jsp',600,400)">
 							<i class="layui-icon"></i>添加
@@ -71,24 +69,24 @@
 						<table class="layui-table layui-form">
 							<thead>
 								<tr>
-									<th><input type="checkbox" name="" lay-skin="primary">
-									</th>
-									<th>ID</th>
+									
+									<th>序号</th>
 									<th>账户</th>
 									<th>密码</th>
 									<th>角色</th>
 									<th>操作</th>
 							</thead>
 							<tbody>
-								<c:forEach items="${list}" var="ad" varStatus="status">
+							
+							
+							
+							 <c:forEach items="${list}" var="ad" varStatus="status">
 								<tr>
-									<td><input type="checkbox" name="aid"
-										value="${ad.getA_id()}" lay-skin="primary"></td>
 									<td>${status.count}</td>
-									<td>${ad.getAccount()}</td>
-									<td>${ad.getAdminpass()}</td>
+									<td>${ad.account}</td>
+									<td>${ad.adminpass}</td>
 									<td><c:choose>
-										<c:when test="${ad.getType()==1}"><span style="color:#B8860B;"><b>超级管理员</b></span></c:when>
+										<c:when test="${ad.type==1}"><span style="color:#B8860B;"><b>超级管理员</b></span></c:when>
 										<c:otherwise>管理员</c:otherwise>
 									</c:choose>
 									</td>
@@ -105,7 +103,7 @@
 									</a></td>
 								</tr>
 								</c:forEach>
-
+							
 							</tbody>
 						</table>
 					</div>
@@ -114,9 +112,8 @@
 
 						</div>
 					</div>
-				</div>
-				
-											<div class="page"  style="display:flex;justify-content:center;algin-item:center;"> 
+				</div>				
+						<div class="page"  style="display:flex;justify-content:center;algin-item:center;"> 
 							&nbsp;&nbsp;
 							<p><a href="${path}/adminList?pageNow=1">首页</a></p>&nbsp;&nbsp;&nbsp;&nbsp;
 							<c:if test="${pageNow!=1}">

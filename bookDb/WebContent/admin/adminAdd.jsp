@@ -6,7 +6,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>哈根达斯欢迎页面</title>
+<title>图书管理系统</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"

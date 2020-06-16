@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import com.systop.entity.Admin;
+
 import com.systop.util.DBUtilsDao;
 
 import java.util.List;
@@ -116,8 +117,24 @@ public class AdminDAOimpl  implements AdminDAO {
 		
 		
 		
+		public List<Admin> adminFindByAccount(String account) {
+	
+			List<Admin> list = null;
+			//sql语句
+			String sql = "select * from admin where account like ?";
+			try {
+				list=DBUtilsDao.findListByParams(sql, Admin.class, "%"+account+"%");
+			} catch (SQLException e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			}
+					
+			return list;	
+		}
+		
 		public Admin adminCheck(String account) {
-			Admin admin=null;
+	
+			Admin admin = null;
 			//sql语句
 			String sql = "select * from admin where account = ?";
 			try {
@@ -129,7 +146,6 @@ public class AdminDAOimpl  implements AdminDAO {
 					
 			return admin;	
 		}
-
 		//删除
 		@Override
 		public int deleteAdminId(int id) {

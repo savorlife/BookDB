@@ -25,7 +25,7 @@
 					<img style="width: 100px" ; alt="<%=path %>/images/success.jpg"
 						src="<%=path %>/images/success.jpg">
 				</h2>
-				<p>添加成功</p>
+				<p>成功！</p>
 
 			</div>
 		</div>

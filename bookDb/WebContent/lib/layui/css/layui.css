@@ -2789,10 +2789,11 @@ a cite {
 
 .layui-table td, .layui-table th {
 	position: relative;
-	padding: 9px 15px;
+	padding: 9px 8px;
 	min-height: 20px;
 	line-height: 20px;
-	font-size: 14px
+	font-size: 14px;
+	text-align: center;
 }
 
 .layui-table[lay-skin=line] td, .layui-table[lay-skin=line] th {

@@ -1,8 +1,11 @@
 package com.systop.servlet;
 
 import com.systop.entity.Admin;
+
 import com.systop.dao.AdminDAO;
+
 import com.systop.dao.impl.AdminDAOimpl;
+
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -56,11 +59,13 @@ public class LoginServlet extends HttpServlet{
 			AdminDAO admindao=new AdminDAOimpl();
 			Admin admin=admindao.loginAdmin(adminName,adminPwd);
 			if(admin!=null){
-				//成功
+				//成功	
 				session.setAttribute("admin",admin);
 			      	Date time = new Date();
 			      	SimpleDateFormat xizai = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			      	SimpleDateFormat nowDate = new SimpleDateFormat("yyyy-MM-dd");
 			      	session.setAttribute("time",time);
+			      	session.setAttribute("nowDate",nowDate);
 			      	session.setAttribute("xizai",xizai);
 				request.getRequestDispatcher("/admin/index.jsp").forward(request, response); 
 			}else{
